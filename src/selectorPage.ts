@@ -26,10 +26,14 @@ export class selectorPage extends BasePage {
 
 
     //Selectors for link test
+    elementExpander: By = By.xpath('(//*[text()="Elements"])')
     linksBox: By = By.id('item-5')
     homeLink: By = By.id('simpleLink')
 
     //Selectors for widgets test
-    widgetsTab: By = By.xpath('(//div[@class="card mt-4 top-card"])[4]')
-    
+    widgetsTab: By = By.xpath('//*[text()="Widgets"]')
+    accordion: By = By.xpath('(//span[text()="Accordian"])')
+    tab1: By = By.id('section1Heading')
+    tab2: By = By.id('section2Heading')
+    tab3: By = By.id('section3Heading')
 }

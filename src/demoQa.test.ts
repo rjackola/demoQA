@@ -36,11 +36,22 @@ test('checkbox confirmation', async() => {
     await myPage.click(myPage.documents)
     await myPage.click(myPage.downloads)
 })
+
+test('Widgets test 3 tabs', async() => {
+    await myPage.click(myPage.widgetsTab)
+    await myPage.click(myPage.accordion)
+    await myPage.click(myPage.tab1)
+    await myPage.click(myPage.tab2)
+    await myPage.click,(myPage.tab3)
+})
+
+
 test('link test',async() =>{
+    await myPage.click(myPage.elementExpander)
     await myPage.click(myPage.linksBox)
     await myPage.click(myPage.homeLink)
 })
 
 afterAll(async () => {
-    await myDriver.quit();
-  });
+  await myDriver.quit();
+});
