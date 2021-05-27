@@ -2,7 +2,7 @@ import { Builder, Capabilities,By,until, TouchSequence } from "selenium-webdrive
 const chromedriver = require('chromedriver')
 import {selectorPage} from '../src/selectorPage'
 import {BasePage} from '../src/basePage'
-import { createImmediatelyInvokedFunctionExpression } from "typescript"
+
 
 const myDriver = new Builder().withCapabilities(Capabilities.chrome()).build()
 
@@ -38,6 +38,8 @@ test('checkbox confirmation', async() => {
 })
 
 test('Widgets test 3 tabs', async() => {
+    await myPage.click(myPage.elementExpander)
+    await (await myDriver).sleep(500)
     await myPage.click(myPage.widgetsTab)
     await myPage.click(myPage.accordion)
     await myPage.click(myPage.tab1)
@@ -48,10 +50,11 @@ test('Widgets test 3 tabs', async() => {
 
 test('link test',async() =>{
     await myPage.click(myPage.elementExpander)
+    await (await myDriver).sleep(500)
     await myPage.click(myPage.linksBox)
     await myPage.click(myPage.homeLink)
 })
 
-afterAll(async () => {
-  await myDriver.quit();
-});
+//afterAll(async () => {
+  //await myDriver.quit();
+//});
